@@ -1,12 +1,13 @@
 package com.example.taba42.controller;
 
-import com.example.taba42.dto.SignUpRequest;
+import com.example.taba42.dto.response.MemberResponse;
+import com.example.taba42.dto.request.SignInRequest;
+import com.example.taba42.dto.request.SignUpRequest;
 import com.example.taba42.service.MemberService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/members")
@@ -19,8 +20,20 @@ public class MemberController {
     }
 
     @PostMapping("/signUp")
-    ResponseEntity<Long> signUp(@RequestBody SignUpRequest request) {
-        memberService.addMember(request);
-        return ResponseEntity.ok().build();
+    ResponseEntity<Long> signUp(@Valid @RequestBody SignUpRequest request) {
+        Long memberId = memberService.signUp(request);
+        return ResponseEntity.ok().body(memberId);
+    }
+
+    @PostMapping("/signIn")
+    ResponseEntity<Long> signIn(@RequestBody SignInRequest request) {
+        Long memberId = memberService.signIn(request);
+        return ResponseEntity.ok().body(memberId);
+    }
+
+    @GetMapping("{memberId}")
+    ResponseEntity<MemberResponse> memberInfo(@PathVariable Long memberId) {
+        MemberResponse memberResponse = memberService.memberInfo(memberId);
+        return ResponseEntity.ok().body(memberResponse);
     }
 }
