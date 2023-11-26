@@ -1,9 +1,11 @@
 package com.example.taba42.domain;
 
-import com.example.taba42.dto.SignUpRequest;
+import com.example.taba42.dto.request.SignUpRequest;
 import lombok.Getter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Table(name = "member")
@@ -14,14 +16,19 @@ public class Member {
     @Id
     private Long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private int age;
 
+    @Email
     private String mid;
 
+    @NotNull
     private String password;
 
+    @NotNull
     private String phoneNumber;
 
     protected Member() {
@@ -44,5 +51,4 @@ public class Member {
                 request.getPhoneNumber()
         );
     }
-
 }
