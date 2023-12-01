@@ -16,9 +16,6 @@ public class MemberResponse {
 
     private String phoneNumber;
 
-    public MemberResponse() {
-    }
-
     public MemberResponse(Long id, String name, int age, String mid, String phoneNumber) {
         this.id = id;
         this.name = name;
