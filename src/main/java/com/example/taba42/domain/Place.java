@@ -17,7 +17,6 @@ public class Place {
 
     private String placeName;
 
-
     private Long price;
 
     private String location;
