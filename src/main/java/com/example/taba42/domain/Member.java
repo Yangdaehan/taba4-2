@@ -16,18 +16,23 @@ public class Member {
     @Id
     private Long id;
 
+    //@Column(name="aassssssa")
     @NotNull
     private String name;
 
+    //@Column(name="aasdfadsfasfaa")
     @NotNull
     private int age;
 
+    //@Column(name="aassdfsdfa")
     @Email
     private String mid;
 
+    //@Column(name="ssddssdsdsdaaa")
     @NotNull
     private String password;
 
+    //@Column(name="aaddddddddda")
     @NotNull
     private String phoneNumber;
 

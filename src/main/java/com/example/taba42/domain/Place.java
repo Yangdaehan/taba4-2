@@ -13,16 +13,22 @@ public class Place {
     @Id
     private Long id;
 
+    //@Column(name="aaa")
     private String placeType;
 
+    //@Column(name="aaab")
     private String placeName;
 
+    //@Column(name="aaac")
     private Long price;
 
+    //@Column(name="aaad")
     private String location;
 
+    //@Column(name="aaads")
     private String openTime;
 
+    //@Column(name="aaaass")
     private Float rating;
 
     public Place() {
