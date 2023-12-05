@@ -20,9 +20,9 @@ public class MemberController {
     }
 
     @PostMapping("/signUp")
-    ResponseEntity<Long> signUp(@Valid @RequestBody SignUpRequest request) {
+    ResponseEntity<String> signUp(@Valid @RequestBody SignUpRequest request) {
         Long memberId = memberService.signUp(request);
-        return ResponseEntity.ok().body(memberId);
+        return ResponseEntity.ok().body("회원가입이 완료되었습니다");
     }
 
     @PostMapping("/signIn")
