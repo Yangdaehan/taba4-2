@@ -5,18 +5,18 @@ import lombok.Getter;
 
 @Getter
 public class CalendarResponse {
-
+/*
     private Long id;
 
-    private String date;
+    private String date;*/
 
     private String toDoList;
 
 //    private String mid;
 
-    public CalendarResponse(Long id, String date, String toDoList) {
-        this.id = id;
-        this.date = date;
+    public CalendarResponse(/*Long id, String date,*/ String toDoList) {
+     /*   this.id = id;
+        this.date = date;*/
         this.toDoList = toDoList;
     }
 //
@@ -32,8 +32,8 @@ public class CalendarResponse {
 
     public static CalendarResponse from(Calendar calendar) {
         return new CalendarResponse(
-                calendar.getId(),
-                calendar.getDate(),
+                /*calendar.getId(),
+                calendar.getDate(),*/
                 calendar.getToDoList()
                 );
     }
