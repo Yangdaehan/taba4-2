@@ -8,6 +8,7 @@ import com.example.taba42.repository.CalendarRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 
 @Service
 public class CalendarService {
@@ -29,14 +30,12 @@ public class CalendarService {
         calendarRepository.save(calendar);
         return calendar.getId();
     }
-    public CalendarResponse calendarInfo(Long CalendarId) {
-        Calendar calendar = getToDoListById(CalendarId);
+    public CalendarResponse calendarInfo(String date) {
+        Calendar calendar = getToDoListByDate(date);
         return CalendarResponse.from(calendar);
     }
-
-    private Calendar getToDoListById(Long calendarId) {
-        System.out.println(calendarId);
-        return calendarRepository.findById(calendarId).orElseThrow(
+    private Calendar getToDoListByDate(String date) {
+        return calendarRepository.findByDate(date).orElseThrow(
                 () -> new CalendarException("해당 날짜에 스케줄 정보가 존재하지 않습니다.")
         );
     }

@@ -16,10 +16,9 @@ public class Calendar {
     @Id
     private Long id;
 
-    //@Column(name="aassklnlnlnlnlnssssa")
+    @Column(name="daya")
     @NotNull
     private String date;
-
 
 
     //@Column(name="aasdfajjjnjnkdsfasfaa")

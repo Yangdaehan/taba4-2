@@ -30,9 +30,9 @@ public class CalendarController {
 //        return ResponseEntity.ok().body(calendarId);
 //    }
 
-    @GetMapping("{calendarId}")
-    ResponseEntity<CalendarResponse> calendarInfo(@PathVariable Long calendarId) {
-        CalendarResponse calendarResponse = calendarService.calendarInfo(calendarId);
+    @GetMapping("{date}")
+    ResponseEntity<CalendarResponse> calendarInfo(@PathVariable String date) {
+        CalendarResponse calendarResponse = calendarService.calendarInfo(date);
         return ResponseEntity.ok().body(calendarResponse);
     }
 }

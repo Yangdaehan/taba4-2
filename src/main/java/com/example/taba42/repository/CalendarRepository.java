@@ -5,6 +5,14 @@ import com.example.taba42.domain.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface CalendarRepository extends JpaRepository<Calendar, Long> {
+
+
+    Optional<Calendar> findByDate(String date);
+    // 선언만 한것임
+    // SELECT * FROM calendar WHERE DAYA = date
+
 }
