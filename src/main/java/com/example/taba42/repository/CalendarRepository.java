@@ -12,7 +12,8 @@ public interface CalendarRepository extends JpaRepository<Calendar, Long> {
 
 
     Optional<Calendar> findByDate(String date);
-    // 선언만 한것임
+    // 선언만 한것
     // SELECT * FROM calendar WHERE DAYA = date
+    //Optional -> null point exception 을 방지
 
 }

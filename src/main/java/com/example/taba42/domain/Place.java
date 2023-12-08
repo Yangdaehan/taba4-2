@@ -1,5 +1,5 @@
 package com.example.taba42.domain;
-//import com.example.taba42.dto.request.SignUpRequest;
+
 import lombok.Getter;
 
 import javax.persistence.*;

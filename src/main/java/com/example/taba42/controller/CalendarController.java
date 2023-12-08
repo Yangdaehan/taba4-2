@@ -24,11 +24,6 @@ public class CalendarController {
         return ResponseEntity.ok().body("일정이 추가되었습니다");
     }
 
-//    @PostMapping("/signIn")
-//    ResponseEntity<Long> signIn(@RequestBody SignInRequest request) {
-//        Long calendarId = calendarService.signIn(request);
-//        return ResponseEntity.ok().body(calendarId);
-//    }
 
     @GetMapping("{date}")
     ResponseEntity<CalendarResponse> calendarInfo(@PathVariable String date) {

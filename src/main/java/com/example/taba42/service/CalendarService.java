@@ -23,10 +23,6 @@ public class CalendarService {
     public Long ScheduleAdd(ScheduleAdd request) {
         final Calendar calendar = Calendar.from(request);
 
-//        if (scheduleRepository.existsByMid(request.getMid())) {
-//            throw new MemberException("중복된 아이디입니다.");
-//        }
-
         calendarRepository.save(calendar);
         return calendar.getId();
     }
